@@ -45,6 +45,7 @@ class Rational(n: Int, d: Int) {
 
 }
 
+//Supporting left side operations as well
 implicit def intToRational(x : Int): Rational = new Rational(x)
 
 
