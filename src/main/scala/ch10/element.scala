@@ -5,6 +5,8 @@ abstract class Element {
   def heigth: Int = contents.length
   def width: Int = if(contents.isEmpty) 0 else contents(0).length
 
+  def Test(a: Int) = println(a + "THIS IS A TEST")
+
   def above (that: Element): Element ={
     val this1 = this widen that.width
     val that1 = that widen this.width
@@ -26,8 +28,11 @@ abstract class Element {
   def widen(w: Int): Element = {
     if(w <= width) this
     else {
+      println(w)
       val left = elem(' ', (w - width) / 2, heigth)
       val right = elem(' ', (w - width - left.width), heigth)
+      println(left)
+      println(right)
       left beside this beside right
     }
   }
